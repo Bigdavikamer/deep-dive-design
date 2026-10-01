@@ -1,0 +1,2927 @@
+DEEP DIVE
+
+Master Game Design & Development Specification
+
+Version 2.0 — Sea Expansion & Dynamic Biomes
+
+---
+
+0. PROJECT IDENTITY
+
+Game Name
+
+DEEP DIVE
+
+Genre
+
+Roblox:
+
+- Exploration
+- Fishing / Deep-Sea Discovery
+- RNG
+- Collection
+- Progression
+- Equipment
+- Trading
+- Limited-time world events
+
+Core Fantasy
+
+The player enters an increasingly mysterious ocean and searches for things that should not be there.
+
+You begin by finding:
+
+«Tin Cans
+Bottles
+Old Coins
+Broken Equipment»
+
+Eventually:
+
+«Ancient Artifacts
+Leviathan Scales
+Void Crystals
+Astral Objects
+Reality Fragments
+Glitched Objects»
+
+The central fantasy is:
+
+«"What will I find if I go deeper?"»
+
+And the secondary fantasy is:
+
+«"What will my item become if something strange happens to the ocean?"»
+
+---
+
+1. DESIGN PILLARS
+
+Deep Dive is built around five pillars.
+
+1.1 Discovery
+
+The player should constantly wonder:
+
+«"What's down there?"»
+
+Unknown items, deeper Seas, rare variants, secret events and bizarre biomes should continuously create curiosity.
+
+1.2 RNG With Meaning
+
+RNG is not simply a slot machine.
+
+The player should improve their odds through:
+
+- Equipment
+- Sea progression
+- Upgrades
+- Player decisions
+- Event participation
+- Collection progression
+
+Luck should influence outcomes, but progression should never feel completely irrelevant.
+
+1.3 Depth
+
+Going deeper must feel meaningful.
+
+Every new Sea should introduce:
+
+- New items
+- Higher rarity
+- New mechanics
+- Better equipment
+- New visual identity
+- New event possibilities
+
+1.4 Collection
+
+Every discovery should contribute toward a larger collection.
+
+Players should eventually chase:
+
+- Every base item
+- Every rarity
+- Every biome variant
+- Every exclusive item
+- Every equipment piece
+
+1.5 Surprise
+
+Deep Dive should be willing to become increasingly ridiculous.
+
+The game begins relatively grounded.
+
+Eventually the ocean can become:
+
+«Crimson.»
+
+Then:
+
+«Frozen.»
+
+Then:
+
+«Void.»
+
+Then:
+
+«Galactic.»
+
+Then:
+
+«Glitched.»
+
+Then:
+
+«Something that clearly should not exist.»
+
+The escalation is part of the game's identity.
+
+---
+
+2. CORE GAME LOOP
+
+The fundamental loop is:
+
+ENTER SEA
+    ↓
+DIVE / FISH / SEARCH
+    ↓
+DISCOVER OBJECT
+    ↓
+RNG DETERMINES RESULT
+    ↓
+RARITY DETERMINED
+    ↓
+ACTIVE BIOME MODIFIER CHECKED
+    ↓
+PREFIX / VARIANT APPLIED
+    ↓
+ITEM ADDED TO INVENTORY
+    ↓
+SELL / KEEP / TRADE
+    ↓
+BUY EQUIPMENT / UPGRADE
+    ↓
+UNLOCK DEEPER SEA
+    ↓
+DISCOVER RARER ITEMS
+    ↓
+REPEAT
+
+The player should understand the basic loop within approximately one minute.
+
+---
+
+3. CYCLE
+
+Discovery → Collection → Equipment → Sea Progression → Biome Hunting
+
+This keeps the game focused on exploration and discovery rather than introducing a separate maintenance mechanic.
+
+4. SEA PROGRESSION
+
+The Sea is the primary progression ladder.
+
+There should be 15 initial Sea levels.
+
+Level| Sea| Power Requirement
+1| Shoreline| 0m
+2| Shallow Waters| 15m
+3| Coral Sea| 40m
+4| Bluewater| 80m
+5| Deepwater| 140m
+6| Abyssal Sea| 230m
+7| Forgotten Depths| 360m
+8| Blackwater| 550m
+9| Leviathan Trench| 800m
+10| Voidwater| 1,150m
+11| Astral Sea| 1,650m
+12| Celestial Deep| 2,350m
+13| Fractured Ocean| 3,300m
+14| Glitched Sea| 4,600m
+15| The Endless| 6,500m
+
+"Power" represents the player's total effective equipment progression.
+
+---
+
+5. SEA LEVEL DESIGN
+
+Sea 1 — Shoreline
+
+Theme:
+
+- Beaches
+- Small docks
+- Clear water
+- Beginner-friendly
+
+Items:
+
+- Tin Can
+- Old Bottle
+- Driftwood
+- Rusty Hook
+- Sea Glass
+
+Purpose:
+
+Tutorial and onboarding.
+
+---
+
+Sea 2 — Shallow Waters
+
+Theme:
+
+- Coral
+- Small fish
+- Sunken objects
+
+Items:
+
+- Old Coin
+- Fishing Net
+- Crab Claw
+- Coral Fragment
+- Broken Compass
+
+---
+
+Sea 3 — Coral Sea
+
+Theme:
+
+- Bright coral
+- Underwater caves
+- Tropical atmosphere
+
+Items:
+
+- Pearl
+- Ancient Shell
+- Golden Fish Scale
+- Coral Crown
+- Sunken Necklace
+
+---
+
+Sea 4 — Bluewater
+
+Theme:
+
+- Open ocean
+- Shipwrecks
+- Deeper caves
+
+Items:
+
+- Ship Bell
+- Ancient Anchor
+- Pirate Compass
+- Treasure Map
+- Silver Coin
+
+---
+
+Sea 5 — Deepwater
+
+Theme:
+
+- Darker ocean
+- Large formations
+- Increasing pressure
+
+Items:
+
+- Golden Coin
+- Sunken Helmet
+- Ancient Idol
+- Black Pearl
+- Royal Relic
+
+---
+
+Sea 6 — Abyssal Sea
+
+Theme:
+
+- Almost complete darkness
+- Bioluminescent life
+- Massive trenches
+
+Items:
+
+- Abyssal Pearl
+- Leviathan Scale
+- Abyssal Relic
+- Deep Core
+- Ancient Eye
+
+---
+
+Sea 7 — Forgotten Depths
+
+Theme:
+
+- Ruins
+- Lost civilizations
+- Ancient structures
+
+Items:
+
+- Forgotten Crown
+- Ancient Key
+- Lost Statue
+- Ruined Tablet
+- Emperor's Relic
+
+---
+
+Sea 8 — Blackwater
+
+Theme:
+
+- Black ocean
+- Strange organisms
+- Heavy fog
+
+Items:
+
+- Black Pearl
+- Shadow Shell
+- Dark Compass
+- Unknown Idol
+- Abyss Heart
+
+---
+
+Sea 9 — Leviathan Trench
+
+Theme:
+
+- Gigantic creatures
+- Massive trenches
+- Boss-scale environmental elements
+
+Items:
+
+- Leviathan Scale
+- Leviathan Tooth
+- Giant Claw
+- Monster Eye
+- Ancient Leviathan Core
+
+---
+
+Sea 10 — Voidwater
+
+Theme:
+
+- Reality begins breaking
+- Floating objects
+- Impossible geometry
+
+Items:
+
+- Void Crystal
+- Void Coin
+- Void Shell
+- Null Fragment
+- Dimensional Key
+
+---
+
+Sea 11 — Astral Sea
+
+Theme:
+
+- Stars visible underwater
+- Cosmic particles
+- Space-like ocean
+
+Items:
+
+- Star Fragment
+- Cosmic Shell
+- Astral Compass
+- Meteor Shard
+- Nebula Fragment
+
+---
+
+Sea 12 — Celestial Deep
+
+Theme:
+
+- Divine/celestial structures
+- Massive glowing formations
+
+Items:
+
+- Celestial Eye
+- Celestial Crown
+- Star Core
+- Divine Relic
+- Cosmic Heart
+
+---
+
+Sea 13 — Fractured Ocean
+
+Theme:
+
+- Broken reality
+- Floating islands
+- Distorted physics
+
+Items:
+
+- Reality Shard
+- Broken Dimension
+- Fractured Crown
+- Reality Core
+- Impossible Object
+
+---
+
+Sea 14 — Glitched Sea
+
+Theme:
+
+- Digital corruption
+- Missing textures
+- Error messages
+- Visual glitches
+
+Items:
+
+- Corrupted Data Chip
+- Glitched Coin
+- Missing Texture
+- Error Fragment
+- Unknown File
+
+---
+
+Sea 15 — The Endless
+
+Theme:
+
+There is no longer a normal ocean.
+
+The environment should feel almost incomprehensible.
+
+Possible elements:
+
+- Infinite darkness
+- Floating oceans
+- Stars beneath the player
+- Giant structures
+- Impossible objects
+- Reality distortion
+
+Items:
+
+- The First Fragment
+- The Last Object
+- Endless Core
+- Unknown Artifact
+- "???"
+
+This is the initial endgame.
+
+---
+
+6. EQUIPMENT SYSTEM
+
+Equipment replaces Restoration as the major permanent progression system.
+
+Five equipment categories exist:
+
+1. Pickaxe / Primary Tool
+2. Bracelet
+3. Hood
+4. Hat
+5. Mantle
+
+Each category should scale alongside the Sea.
+
+---
+
+7. EQUIPMENT POWER
+
+Every piece has:
+
+Power
+
+Determines progression toward deeper Seas.
+
+Luck
+
+Improves RNG outcomes.
+
+Discovery
+
+Improves chances of finding higher-tier objects.
+
+Variant Chance
+
+Improves chances of receiving biome-modified objects.
+
+Value
+
+Improves economic output where appropriate.
+
+Not every equipment item needs every stat.
+
+---
+
+8. EQUIPMENT TIERS
+
+Initial equipment progression:
+
+Tier| Primary Tool| Other Equipment
+1| 10| 5
+2| 25| 12
+3| 50| 25
+4| 90| 45
+5| 150| 75
+6| 250| 125
+7| 400| 200
+8| 650| 325
+9| 1,000| 500
+10| 1,500| 750
+11| 2,250| 1,125
+12| 3,400| 1,700
+
+The exact numbers can be tuned after playtesting.
+
+The important rule is:
+
+«No equipment category should become permanently irrelevant.»
+
+---
+
+9. EQUIPMENT SPECIALIZATION
+
+Equipment should not only be "bigger number."
+
+Examples:
+
+Crimson Bracelet
+
+- +Luck
+- +Crimson Variant Chance
+
+Abyssal Mantle
+
+- +Discovery
+- +Abyssal Sea efficiency
+
+Galactic Hood
+
+- +Rare Chance
+- +Biome Variant Chance
+
+Glitched Hat
+
+- +Mutation Chance
+- +Glitch Event bonuses
+
+Void Pickaxe
+
+- Massive Power
+- Increased high-rarity discovery
+
+This creates build decisions.
+
+---
+
+10. EQUIPMENT UPGRADES
+
+Each equipment piece can be upgraded.
+
+Upgrade categories:
+
+Power Upgrade
+
+Increases Sea progression value.
+
+Luck Upgrade
+
+Improves RNG.
+
+Discovery Upgrade
+
+Improves high-rarity discovery.
+
+Variant Upgrade
+
+Improves biome variant chances.
+
+Value Upgrade
+
+Increases item selling value.
+
+The player should gradually invest into equipment instead of replacing everything every few minutes.
+
+---
+
+11. ITEM SYSTEM
+
+Deep Dive uses Base Items + Rarity + Variant.
+
+The game should NOT create a completely separate database entry for every combination.
+
+Example:
+
+Base Item:
+Tin Can
+
+Rarity:
+Common
+
+Biome Prefix:
+Crimson
+
+Display:
+
+«Crimson Tin Can»
+
+This system allows thousands of combinations without thousands of manually defined objects.
+
+---
+
+12. BASE ITEM LIST
+
+Initial item pool:
+
+Common / Early
+
+1. Tin Can
+2. Old Bottle
+3. Driftwood
+4. Rusty Hook
+5. Sea Glass
+6. Fishing Net
+7. Crab Claw
+8. Old Coin
+9. Broken Compass
+10. Coral Fragment
+
+Uncommon
+
+11. Ancient Shell
+12. Pearl
+13. Ship Bell
+14. Silver Coin
+15. Pirate Compass
+16. Sunken Helmet
+17. Treasure Map
+18. Golden Fish Scale
+19. Ancient Anchor
+20. Sunken Necklace
+
+Rare
+
+21. Golden Coin
+22. Black Pearl
+23. Ancient Idol
+24. Royal Relic
+25. Abyssal Pearl
+26. Deep Core
+27. Ancient Eye
+28. Forgotten Crown
+29. Ancient Key
+30. Lost Statue
+
+Epic
+
+31. Leviathan Scale
+32. Leviathan Tooth
+33. Monster Eye
+34. Abyss Heart
+35. Shadow Shell
+36. Ancient Leviathan Core
+
+Legendary
+
+37. Void Crystal
+38. Dimensional Key
+39. Reality Shard
+40. Star Fragment
+41. Meteor Shard
+42. Nebula Fragment
+43. Celestial Eye
+44. Star Core
+
+Mythic
+
+45. Reality Core
+46. Celestial Crown
+47. Cosmic Heart
+48. Broken Dimension
+49. The First Fragment
+50. Unknown Artifact
+
+This provides 50 base items at launch.
+
+---
+
+13. ITEM RARITIES
+
+Initial rarity hierarchy:
+
+COMMON
+UNCOMMON
+RARE
+EPIC
+LEGENDARY
+MYTHIC
+SECRET
+
+Secret items should not simply be "very expensive."
+
+They should feel like discoveries.
+
+Examples:
+
+«???
+The First Object
+Null
+The Impossible Fish
+Missing Object»
+
+---
+
+14. ITEM VALUE
+
+Item value is determined by:
+
+Base Value
+× Rarity Multiplier
+× Sea Multiplier
+× Biome Multiplier
+× Mutation Multiplier
+
+Do not allow exponential multiplication to become uncontrollable.
+
+All multipliers must have server-side caps.
+
+---
+
+15. DYNAMIC BIOME EVENTS
+
+This is a major Deep Dive system.
+
+Every 30 minutes, the server rolls a temporary biome event.
+
+Example:
+
+00:00 — Normal
+00:30 — Event
+01:00 — Normal
+01:30 — Event
+02:00 — Normal
+
+Event duration:
+
+10–15 minutes
+
+Recommended initial value:
+
+12 minutes
+
+Then the server returns to normal conditions.
+
+---
+
+16. EVENT ANNOUNCEMENT
+
+Approximately 2 minutes before an event:
+
+«⚠️ STRANGE OCEAN ACTIVITY DETECTED»
+
+Then:
+
+«A new biome is appearing soon...»
+
+At activation:
+
+«🌊 CRIMSON WATERS
+
+The ocean has turned crimson.
+
+Strange objects may appear.»
+
+This creates anticipation.
+
+---
+
+17. BIOME VARIANT SYSTEM
+
+Every biome can modify items.
+
+Normal:
+
+«Tin Can»
+
+Crimson biome:
+
+«Crimson Tin Can»
+
+Frozen biome:
+
+«Frozen Tin Can»
+
+Galactic biome:
+
+«Galactic Tin Can»
+
+Glitched biome:
+
+«Glitched Tin Can»
+
+The base item remains the same.
+
+Only the variant data changes.
+
+---
+
+18. BIOME PREFIX RULE
+
+The prefix must appear before the base item.
+
+Format:
+
+[Prefix] [Base Item]
+
+Examples:
+
+Crimson Tin Can
+Frozen Pearl
+Golden Ancient Anchor
+Ghostly Compass
+Void Leviathan Scale
+Galactic Star Fragment
+Corrupted Coin
+Null Artifact
+
+---
+
+19. COMMON BIOMES
+
+These should be the most frequent.
+
+Rainstorm
+
+Prefix:
+
+Rainy
+
+Effect:
+
+- Slightly increased Discovery
+- Water visual changes
+
+---
+
+Thunderstorm
+
+Prefix:
+
+Thunder
+
+Effect:
+
+- Increased Rare chance
+- Lightning effects
+
+---
+
+Fog
+
+Prefix:
+
+Misty
+
+Effect:
+
+- Slight Variant bonus
+
+---
+
+Rough Waters
+
+Prefix:
+
+Stormy
+
+Effect:
+
+- Increased item value
+
+---
+
+Frozen Waters
+
+Prefix:
+
+Frozen
+
+Effect:
+
+- Frozen variants
+- Increased value
+
+---
+
+Eclipse
+
+Prefix:
+
+Lunar
+
+Effect:
+
+- Increased Rare chance
+
+---
+
+20. RARE BIOMES
+
+Crimson Waters
+
+Prefix:
+
+Crimson
+
+Effects:
+
+- Crimson variants enabled
+- Increased Rare chance
+- Exclusive Crimson items
+
+---
+
+Toxic Tide
+
+Prefix:
+
+Toxic
+
+Effects:
+
+- Toxic variants
+- Increased Mutation chance
+
+---
+
+Golden Ocean
+
+Prefix:
+
+Golden
+
+Effects:
+
+- Golden variants
+- Increased item value
+
+---
+
+Ghost Sea
+
+Prefix:
+
+Ghostly
+
+Effects:
+
+- Ghostly variants
+- Exclusive Ghost items
+
+---
+
+Ancient Waters
+
+Prefix:
+
+Ancient
+
+Effects:
+
+- Ancient variants
+- Increased Ancient item discovery
+
+---
+
+21. EPIC BIOMES
+
+Gravity Collapse
+
+Prefix:
+
+Gravitational
+
+Effects:
+
+- Objects visually float
+- Increased Epic chance
+
+---
+
+Dimensional Rift
+
+Prefix:
+
+Dimensional
+
+Effects:
+
+- Dimensional variants
+- Increased high-rarity chance
+
+---
+
+Timefall
+
+Prefix:
+
+Temporal
+
+Effects:
+
+- Temporal variants
+- Faster event interactions
+
+---
+
+Void Tide
+
+Prefix:
+
+Void
+
+Effects:
+
+- Void variants
+- Increased Legendary chance
+
+---
+
+Neon Ocean
+
+Prefix:
+
+Neon
+
+Effects:
+
+- Neon variants
+- Increased Value
+
+---
+
+Chaos Storm
+
+Prefix:
+
+Chaotic
+
+Effects:
+
+- Higher variance
+- Increased Mutation chance
+
+---
+
+22. MYTHIC BIOMES
+
+These should make the entire server react.
+
+Meteor Shower
+
+Prefix:
+
+Meteoric
+
+---
+
+Galactic Storm
+
+Prefix:
+
+Galactic
+
+Effects:
+
+- Galactic variants
+- Cosmic items become possible
+
+---
+
+Supernova Waters
+
+Prefix:
+
+Supernova
+
+Effects:
+
+- Extremely high rarity modifier
+- Supernova-exclusive objects
+
+---
+
+Celestial Ocean
+
+Prefix:
+
+Celestial
+
+Effects:
+
+- Celestial variants
+- Celestial-exclusive items
+
+---
+
+Reality Fracture
+
+Prefix:
+
+Fractured
+
+Effects:
+
+- Reality variants
+- Secret discovery chance increased
+
+---
+
+23. GLITCH / HACKER BIOMES
+
+These are critical for Deep Dive's identity.
+
+SYSTEM ERROR
+
+Prefix:
+
+Corrupted
+
+Visual:
+
+- UI glitches
+- Color distortion
+- Floating error messages
+
+Possible items:
+
+- Error Fragment
+- Corrupted Data Chip
+- Missing Texture
+
+---
+
+404 OCEAN
+
+Prefix:
+
+404
+
+Visual:
+
+- Missing textures
+- Black void patches
+- Broken environment
+
+Example:
+
+«404 Tin Can»
+
+---
+
+NULL SEA
+
+Prefix:
+
+Null
+
+Visual:
+
+- Black/white environment
+- Missing particles
+- Strange silence
+
+Example:
+
+«Null Pearl»
+
+---
+
+[REDACTED]
+
+Prefix:
+
+Redacted
+
+The game deliberately gives very little information.
+
+Example:
+
+«Redacted Artifact»
+
+---
+
+SYSTEM OVERRIDE
+
+Prefix:
+
+System
+
+Extremely rare event.
+
+Example:
+
+«System Void Crystal»
+
+---
+
+REALITY.EXE
+
+Prefix:
+
+EXE
+
+The entire world becomes corrupted.
+
+Example:
+
+«EXE Pearl»
+
+---
+
+24. BIOME AVAILABILITY BY SEA
+
+Players should not immediately encounter every biome.
+
+Seas 1–4
+
+Possible:
+
+- Rainstorm
+- Fog
+- Thunderstorm
+- Rough Waters
+- Golden Ocean
+
+Seas 5–8
+
+Unlock:
+
+- Crimson Waters
+- Frozen Waters
+- Ghost Sea
+- Toxic Tide
+- Ancient Waters
+
+Seas 9–12
+
+Unlock:
+
+- Void Tide
+- Dimensional Rift
+- Timefall
+- Galactic Storm
+- Celestial Ocean
+
+Seas 13–15
+
+Unlock:
+
+- Reality Fracture
+- SYSTEM ERROR
+- 404 Ocean
+- NULL Sea
+- SYSTEM OVERRIDE
+- REALITY.EXE
+
+This gives Sea progression another purpose.
+
+---
+
+25. BIOME-EXCLUSIVE ITEMS
+
+Some events can create items that are impossible to obtain normally.
+
+Crimson Waters
+
+- Crimson Heart
+- Blood Pearl
+
+Ghost Sea
+
+- Spectral Compass
+- Ghost Anchor
+
+Galactic Storm
+
+- Star Core
+- Nebula Fragment
+
+Reality Fracture
+
+- Reality Shard
+- Broken Dimension
+
+SYSTEM ERROR
+
+- Error Fragment
+- Missing Texture
+- "NULL"
+
+These items should be highly desirable.
+
+---
+
+26. VARIANT RARITY
+
+Not every biome item should automatically be valuable.
+
+The system should determine:
+
+Base Item
+    ↓
+Can Variant Occur?
+    ↓
+Variant Roll
+    ↓
+Variant Quality
+
+Example:
+
+Normal roll:
+
+«Tin Can»
+
+Variant roll:
+
+«Crimson Tin Can»
+
+Rare variant roll:
+
+«Crimson Golden Tin Can»
+
+Potential future system:
+
+«Corrupted Crimson Tin Can»
+
+This creates layers of RNG.
+
+---
+
+27. MULTI-VARIANT SYSTEM
+
+For the future, the architecture should support multiple modifiers.
+
+Example:
+
+Corrupted
++
+Galactic
++
+Pearl
+
+Display:
+
+«Corrupted Galactic Pearl»
+
+However, this should be disabled or heavily restricted at launch until the economy is proven stable.
+
+The data model should support it even if the feature does not.
+
+---
+
+28. COLLECTION / INDEX
+
+The Index is one of the most important systems.
+
+Players can see:
+
+Base Items
+
+Tin Can ✓
+Old Bottle ✓
+Pearl ✓
+Leviathan Scale ?
+Void Crystal ✓
+
+Variants
+
+Crimson Tin Can ✓
+Frozen Tin Can ?
+Golden Tin Can ?
+Galactic Tin Can ?
+Corrupted Tin Can ?
+
+Secret
+
+??? ?
+??? ?
+The First Fragment ?
+
+Completion should be tracked independently.
+
+---
+
+29. ITEM DISCOVERY UI
+
+When discovering an item:
+
+Screen briefly displays:
+
+«NEW DISCOVERY»
+
+Then:
+
+«CRIMSON TIN CAN»
+
+Then:
+
+«COMMON»
+
+Then:
+
+«+250 Coins»
+
+For very rare items, the presentation should become dramatically more intense.
+
+---
+
+30. INVENTORY
+
+Inventory should display:
+
+- Item name
+- Rarity
+- Prefix
+- Base item
+- Value
+- Discovery status
+
+Players should be able to:
+
+- Sell
+- Lock
+- Favorite
+- Trade
+- View details
+
+Locked items cannot be accidentally sold.
+
+---
+
+31. ECONOMY
+
+Primary currency:
+
+Coins
+
+Coins are earned by:
+
+- Selling discoveries
+- Missions
+- Event rewards
+- Milestones
+
+Coins are spent on:
+
+- Equipment
+- Equipment upgrades
+- Sea access
+- Utility upgrades
+
+Do not allow premium currency to directly dominate the progression.
+
+---
+
+32. OPTIONAL SECONDARY CURRENCY
+
+A second currency can exist later.
+
+Possible name:
+
+Deep Shards
+
+Obtained through:
+
+- Events
+- Secrets
+- Achievements
+- Endgame content
+
+Used for:
+
+- Cosmetic equipment
+- Special effects
+- Limited cosmetics
+- Event-related purchases
+
+It should not be required for basic progression.
+
+---
+
+33. MISSIONS
+
+Missions should reinforce the game's core loop.
+
+Examples:
+
+Beginner
+
+«Discover 5 items.»
+
+Explorer
+
+«Reach Sea 3.»
+
+Collector
+
+«Discover 25 unique items.»
+
+Event Hunter
+
+«Discover 3 biome variants.»
+
+Deep Diver
+
+«Reach Sea 8.»
+
+Void Walker
+
+«Discover a Void item.»
+
+Glitch Hunter
+
+«Discover a Glitched item.»
+
+Reality Breaker
+
+«Discover a Reality variant.»
+
+Missions should never require spending Robux.
+
+---
+
+34. DAILY / RECURRING OBJECTIVES
+
+Examples:
+
+- Discover 10 items
+- Find 2 Rare items
+- Participate in 1 biome
+- Sell 10 items
+- Reach a new depth
+- Discover a variant
+
+This creates a reason to return every day.
+
+---
+
+35. EVENT SERVER ANNOUNCEMENTS
+
+Global announcements should occur for major events.
+
+Example:
+
+«🌊 CRIMSON WATERS HAVE APPEARED!»
+
+For Mythic:
+
+«☄️ A GALACTIC STORM HAS ENTERED THE OCEAN!»
+
+For secret events:
+
+«⚠️ REALITY INTEGRITY: 37%»
+
+Do not reveal everything about extremely rare events.
+
+Mystery is valuable.
+
+---
+
+36. TRADING
+
+Trading should be considered a core long-term feature.
+
+Players can trade:
+
+- Items
+- Variant items
+- Equipment
+- Potentially event-exclusive items
+
+Trading should be server-authoritative.
+
+Every trade requires:
+
+1. Player A selects items.
+2. Player B selects items.
+3. Both confirm.
+4. Confirmation locks the trade.
+5. Both confirm again.
+6. Server executes transaction atomically.
+
+Never trust the client with item ownership.
+
+---
+
+37. TRADE VALUE
+
+Items should have:
+
+- Base value
+- Rarity
+- Variant
+- Event source
+- Discovery rarity
+
+The displayed shop value is NOT necessarily the same as player-to-player market value.
+
+This is intentional.
+
+Rare variants should develop their own player-driven value.
+
+---
+
+38. EQUIPMENT COLLECTION
+
+Equipment should also be collectible.
+
+Examples:
+
+- Rusty Pickaxe
+- Coral Pickaxe
+- Abyss Pickaxe
+- Leviathan Pickaxe
+- Void Pickaxe
+- Galactic Pickaxe
+- Glitched Pickaxe
+
+And:
+
+- Crimson Bracelet
+- Ghostly Mantle
+- Celestial Hat
+- Corrupted Hood
+
+---
+
+39. F2P DESIGN
+
+Deep Dive must remain fully playable without spending Robux.
+
+Premium should provide:
+
+- Cosmetics
+- Convenience
+- Extra customization
+- Visual effects
+- Optional inventory convenience
+- Private servers
+- Cosmetic titles
+
+Premium should NOT:
+
+- Lock Seas
+- Lock exclusive progression
+- Guarantee Mythic items
+- Guarantee Secrets
+- Make F2P players objectively unable to compete
+
+---
+
+40. MONETIZATION
+
+Potential products:
+
+Gamepasses
+
+- Cosmetic customization
+- Extra cosmetic slots
+- Special dive animations
+- Cosmetic boat
+- Name effects
+
+Developer Products
+
+- Temporary convenience boosts
+- Event cosmetics
+- Cosmetic crates
+- Optional inventory expansions
+
+Any RNG-related paid mechanic must be handled transparently and carefully.
+
+The game's primary retention mechanism should remain gameplay.
+
+---
+
+41. NO PAY-TO-WIN RULE
+
+Never sell:
+
+«"100% chance of Mythic"»
+
+Never sell:
+
+«"Instantly unlock every Sea"»
+
+Never sell:
+
+«"Exclusive item unavailable to F2P"»
+
+Paid convenience is acceptable.
+
+Paid destruction of progression is not.
+
+---
+
+42. PLAYER PROGRESSION
+
+The player's progression hierarchy:
+
+PLAYER
+ ↓
+EQUIPMENT
+ ↓
+POWER
+ ↓
+SEA ACCESS
+ ↓
+ITEM POOL
+ ↓
+BIOME ACCESS
+ ↓
+VARIANT ACCESS
+ ↓
+SECRET HUNTING
+
+This ensures every layer unlocks the next.
+
+---
+
+43. NEW PLAYER EXPERIENCE
+
+First 60 seconds:
+
+0–10 sec
+
+Player spawns at the starting dock.
+
+NPC/tutorial:
+
+«"The deeper you go, the stranger it gets."»
+
+10–30 sec
+
+Player performs first dive/search.
+
+Gets:
+
+«Old Bottle»
+
+30–45 sec
+
+Player sells it.
+
+Buys first upgrade.
+
+45–60 sec
+
+Player discovers:
+
+«NEW ITEM»
+
+And sees:
+
+«Sea 2 — Shallow Waters»
+
+The player immediately understands the progression.
+
+---
+
+44. DEPTH FEELING
+
+Every Sea should feel visually deeper.
+
+Do not simply recolor the same map.
+
+Use:
+
+- Different lighting
+- Different fog
+- Different particles
+- Different terrain
+- Different objects
+- Different ambient sounds
+- Different environmental events
+
+Sea 1 should feel like an ocean.
+
+Sea 15 should feel like something else entirely.
+
+---
+
+45. BIOME VISUAL TRANSFORMATION
+
+When a biome activates, the environment should noticeably transform.
+
+Example:
+
+Crimson Waters
+
+- Water becomes red
+- Red particles
+- Dark sky
+- Strange waves
+- Red lighting
+
+Galactic Storm
+
+- Stars appear
+- Cosmic particles
+- Water becomes space-like
+- Meteor effects
+
+SYSTEM ERROR
+
+- Textures flicker
+- Objects disappear
+- UI glitches
+- Random error sounds
+- Broken lighting
+
+The player should recognize an event without opening a menu.
+
+---
+
+46. AUDIO
+
+Every Sea should have unique ambience.
+
+Biomes should layer additional audio.
+
+Examples:
+
+Thunderstorm:
+
+- Thunder
+- Heavy rain
+
+Ghost Sea:
+
+- Wind
+- Distant whispers
+- Low ambient tones
+
+Galactic:
+
+- Deep cosmic hum
+- Distorted ambience
+
+SYSTEM ERROR:
+
+- Glitch sounds
+- Digital distortion
+- Abrupt audio cuts
+
+---
+
+47. LUCK SYSTEM
+
+Luck should be mathematically controlled.
+
+Luck should modify probability rather than directly guaranteeing results.
+
+Conceptually:
+
+FinalLuck =
+BaseLuck
++
+EquipmentLuck
++
+TemporaryBuffs
++
+BiomeBonus
+
+Then use a server-side RNG system.
+
+Luck must have diminishing returns.
+
+This prevents players from eventually reaching:
+
+«"Nothing below Mythic exists."»
+
+---
+
+48. DISCOVERY POWER
+
+Discovery Power determines access to deeper content.
+
+Example:
+
+Equipment Power
++
+Upgrade Power
+=
+Total Power
+
+Total Power is compared against Sea requirements.
+
+Players cannot bypass Sea requirements simply by manipulating RNG.
+
+---
+
+49. BIOME TIMER
+
+The server maintains one authoritative event state:
+
+CurrentBiome
+BiomeStartTime
+BiomeEndTime
+NextBiomeTime
+BiomeTier
+BiomeModifiers
+
+Clients only receive the state.
+
+Clients do NOT determine:
+
+- Biome
+- Duration
+- Item results
+- Variant results
+
+---
+
+50. SERVER AUTHORITY
+
+The server controls all important outcomes.
+
+Server decides:
+
+- Item discovered
+- Rarity
+- Variant
+- Value
+- Equipment stats
+- Currency
+- Trade
+- Inventory
+- Sea access
+- Biome
+- Event rewards
+
+Client controls:
+
+- Input
+- Camera
+- UI
+- Visual effects
+
+This is mandatory.
+
+---
+
+51. DATA SAVING
+
+Player data should include:
+
+Coins
+DeepShards
+CurrentSea
+Equipment
+EquipmentUpgrades
+Inventory
+DiscoveredItems
+DiscoveredVariants
+Missions
+Achievements
+Settings
+Statistics
+
+Statistics:
+
+- Total dives
+- Items discovered
+- Rare discoveries
+- Mythic discoveries
+- Secret discoveries
+- Events participated in
+- Variants discovered
+- Deepest Sea reached
+- Total coins earned
+
+---
+
+52. DATA SAFETY
+
+Saving system must include:
+
+- Server-side validation
+- Retry logic
+- Session locking where appropriate
+- Data versioning
+- Migration support
+- Corruption protection
+- Safe defaults
+- Atomic-ish update patterns
+
+Never permanently overwrite valid player data with malformed data.
+
+---
+
+53. ANTI-EXPLOIT
+
+Validate every remote request.
+
+Example:
+
+Client says:
+
+«"I found a Mythic Pearl."»
+
+Server response:
+
+«"Did the server actually generate that item?"»
+
+If not:
+
+«Reject.»
+
+Never accept client-provided:
+
+- Item values
+- Currency amounts
+- Rarity
+- Equipment stats
+- Sea level
+- Trade contents
+
+---
+
+54. TECHNICAL ARCHITECTURE
+
+Recommended high-level structure:
+
+ReplicatedStorage
+├── Shared
+│   ├── Config
+│   ├── Constants
+│   ├── Types
+│   └── Utilities
+│
+└── Remotes
+
+ServerScriptService
+├── Bootstrap
+├── Services
+├── Managers
+└── Systems
+
+StarterPlayer
+└── StarterPlayerScripts
+    ├── Controllers
+    └── UI
+
+---
+
+55. CORE SERVER SYSTEMS
+
+Recommended Services:
+
+PlayerDataService
+InventoryService
+DiscoveryService
+BiomeService
+SeaService
+EquipmentService
+UpgradeService
+TradingService
+MissionService
+EconomyService
+EventService
+
+Managers:
+
+ItemManager
+BiomeManager
+EquipmentManager
+SeaManager
+RarityManager
+RNGManager
+
+---
+
+56. ITEM DATA ARCHITECTURE
+
+Base item example:
+
+{
+    Id = "tin_can",
+    Name = "Tin Can",
+    Rarity = "Common",
+    BaseValue = 10,
+    MinimumSea = 1,
+}
+
+Variant:
+
+{
+    Prefix = "Crimson",
+    SourceBiome = "CrimsonWaters",
+    ValueMultiplier = 2,
+}
+
+Result:
+
+Crimson Tin Can
+
+This separation is essential for scalability.
+
+---
+
+57. BIOME DATA ARCHITECTURE
+
+Conceptually:
+
+{
+    Id = "crimson_waters",
+    Name = "Crimson Waters",
+    Prefix = "Crimson",
+    Tier = "Rare",
+    Duration = 720,
+
+    Modifiers = {
+        RareBonus = 0.15,
+        VariantChance = 0.20,
+        ValueMultiplier = 1.25,
+    },
+
+    ExclusiveItems = {
+        "crimson_heart",
+        "blood_pearl",
+    }
+}
+
+All actual RNG calculations remain server-side.
+
+---
+
+58. EVENT RARITY WEIGHTS
+
+Initial approximate distribution:
+
+Common Event       55%
+Rare Event         25%
+Epic Event         12%
+Mythic Event        6%
+Secret Event        2%
+
+These are tuning values, not permanent rules.
+
+The event system must allow live balancing.
+
+---
+
+59. EVENT DISCOVERY
+
+Players who are offline during an event do not receive its rewards automatically.
+
+The purpose is to create:
+
+«"I need to get online when the weird ocean appears."»
+
+This creates recurring engagement.
+
+---
+
+60. SECRET EVENTS
+
+Secret events should have:
+
+- Very low probability
+- Unique visual identity
+- Unique items
+- Server announcements
+- Unique Index entries
+
+Examples:
+
+«The Ocean Is Gone»
+
+«Everything Is Upside Down»
+
+«NULL»
+
+«Reality Collapse»
+
+«The Endless»
+
+These should become memorable moments.
+
+---
+
+61. SOCIAL RETENTION
+
+Players should naturally want to tell others:
+
+«"I got a Galactic Tin Can."»
+
+or:
+
+«"I found a Corrupted Leviathan Scale."»
+
+or:
+
+«"The 404 Ocean appeared."»
+
+Add:
+
+- Item inspection
+- Collection showcase
+- Titles
+- Player profile
+- Rare discovery announcements
+- Achievement badges
+
+---
+
+62. PLAYER TITLES
+
+Examples:
+
+First Diver
+
+Collector
+
+Deep Diver
+
+Abyss Walker
+
+Void Walker
+
+Reality Breaker
+
+Glitch Hunter
+
+Event Hunter
+
+Secret Finder
+
+The Endless
+
+Titles are cosmetic.
+
+---
+
+63. ACHIEVEMENTS
+
+Examples:
+
+First Dive
+
+Complete your first discovery.
+
+Going Deeper
+
+Reach Sea 5.
+
+Abyss
+
+Reach Sea 8.
+
+Into The Void
+
+Reach Sea 10.
+
+Beyond Reality
+
+Reach Sea 13.
+
+Glitched
+
+Discover a Glitched item.
+
+Event Hunter
+
+Discover 10 biome variants.
+
+Impossible
+
+Discover a Secret.
+
+---
+
+64. UI STRUCTURE
+
+Main HUD:
+
+┌─────────────────────────────┐
+│ Coins                       │
+│                             │
+│             SEA 7           │
+│                             │
+│       [DISCOVER]            │
+│                             │
+│     Biome: Crimson Waters   │
+│     08:42 remaining         │
+│                             │
+│ Inventory  Index  Equipment │
+└─────────────────────────────┘
+
+Keep the screen clean.
+
+The player should always know:
+
+- Where they are
+- What event is active
+- How long it lasts
+- What they can do
+
+---
+
+65. DISCOVERY PRESENTATION
+
+Common:
+
+Small popup.
+
+Rare:
+
+Larger popup.
+
+Epic:
+
+Screen effect.
+
+Legendary:
+
+Large animation + sound.
+
+Mythic:
+
+Full-screen presentation.
+
+Secret:
+
+Special presentation that temporarily interrupts normal gameplay.
+
+The rarer the discovery, the more memorable the moment.
+
+---
+
+66. MOBILE SUPPORT
+
+Deep Dive must support:
+
+- Mobile
+- PC
+- Console
+
+Controls must remain simple.
+
+Primary interaction should be possible with:
+
+«One large contextual button.»
+
+Avoid requiring precise mouse-only interactions.
+
+---
+
+67. PERFORMANCE
+
+Do not continuously spawn hundreds of objects.
+
+Biome visual effects should use:
+
+- Reusable effects
+- Particle limits
+- Client-side visuals
+- Streaming
+- Object pooling where necessary
+
+Server should prioritize:
+
+- Data
+- RNG
+- Inventory
+- Progression
+- Economy
+
+Client handles:
+
+- Visual spectacle
+- Camera
+- Particles
+- UI animation
+
+---
+
+68. LAUNCH CONTENT TARGET
+
+Launch should contain:
+
+Seas
+
+15
+
+Base Items
+
+50+
+
+Equipment
+
+At least:
+
+- 12 primary tools
+- 12 bracelets
+- 12 hoods
+- 12 hats
+- 12 mantles
+
+Biomes
+
+At least:
+
+20
+
+Event-exclusive items
+
+At least:
+
+10
+
+Missions
+
+30+
+
+Achievements
+
+30+
+
+This gives the game enough content to feel like a real release rather than a prototype.
+
+---
+
+69. BIOME MASTER LIST
+
+Initial 20+ event pool:
+
+1. Rainstorm
+2. Thunderstorm
+3. Fog
+4. Rough Waters
+5. Frozen Waters
+6. Eclipse
+7. Crimson Waters
+8. Toxic Tide
+9. Golden Ocean
+10. Ghost Sea
+11. Ancient Waters
+12. Gravity Collapse
+13. Dimensional Rift
+14. Timefall
+15. Void Tide
+16. Neon Ocean
+17. Chaos Storm
+18. Meteor Shower
+19. Galactic Storm
+20. Supernova Waters
+21. Celestial Ocean
+22. Reality Fracture
+23. SYSTEM ERROR
+24. 404 OCEAN
+25. NULL SEA
+26. [REDACTED]
+27. SYSTEM OVERRIDE
+28. REALITY.EXE
+
+This gives us 28 biome events.
+
+---
+
+70. PREFIX MASTER LIST
+
+Biome| Prefix
+Rainstorm| Rainy
+Thunderstorm| Thunder
+Fog| Misty
+Rough Waters| Stormy
+Frozen Waters| Frozen
+Eclipse| Lunar
+Crimson Waters| Crimson
+Toxic Tide| Toxic
+Golden Ocean| Golden
+Ghost Sea| Ghostly
+Ancient Waters| Ancient
+Gravity Collapse| Gravitational
+Dimensional Rift| Dimensional
+Timefall| Temporal
+Void Tide| Void
+Neon Ocean| Neon
+Chaos Storm| Chaotic
+Meteor Shower| Meteoric
+Galactic Storm| Galactic
+Supernova Waters| Supernova
+Celestial Ocean| Celestial
+Reality Fracture| Fractured
+SYSTEM ERROR| Corrupted
+404 OCEAN| 404
+NULL SEA| Null
+[REDACTED]| Redacted
+SYSTEM OVERRIDE| System
+REALITY.EXE| EXE
+
+---
+
+71. DESIGN RULE FOR FUTURE CONTENT
+
+Every new update should ideally add at least one of:
+
+- New Sea
+- New items
+- New equipment
+- New biome
+- New variants
+- New secrets
+- New collection objectives
+
+The game should be expandable without redesigning its core systems.
+
+---
+
+72. UPDATE PHILOSOPHY
+
+Example update:
+
+UPDATE 1 — THE FROZEN DEEP
+
+Adds:
+
+- Sea 16
+- 10 items
+- Frozen biome
+- 5 equipment pieces
+- Frozen variants
+- 3 missions
+- 1 secret
+
+Next update:
+
+UPDATE 2 — THE VOID
+
+Adds:
+
+- Sea 17
+- Void biome improvements
+- 10 items
+- Void equipment
+- Void secrets
+
+The architecture should make these additions mostly data/content work rather than rewriting systems.
+
+---
+
+73. DEVELOPMENT PRIORITY
+
+Build in this order:
+
+PHASE 1 — FOUNDATION
+
+- Project structure
+- Server architecture
+- Data system
+- Item definitions
+- Player profiles
+- Basic inventory
+
+PHASE 2 — CORE GAMEPLAY
+
+- Diving/discovery interaction
+- RNG
+- Item generation
+- Selling
+- Equipment
+- Equipment upgrades
+
+PHASE 3 — SEA PROGRESSION
+
+- Sea 1–5
+- Sea requirements
+- Equipment scaling
+- Unlock system
+
+PHASE 4 — COLLECTION
+
+- Index
+- Discovery tracking
+- Item variants
+- Item locking
+- Statistics
+
+PHASE 5 — BIOMES
+
+- Biome manager
+- 30-minute cycle
+- Event UI
+- Prefix system
+- Variant generation
+- Event-exclusive items
+
+PHASE 6 — CONTENT
+
+- Seas 6–15
+- 50+ items
+- 20+ biomes
+- Equipment sets
+- Secrets
+
+PHASE 7 — SOCIAL
+
+- Trading
+- Profiles
+- Titles
+- Achievements
+- Showcases
+
+PHASE 8 — POLISH
+
+- VFX
+- SFX
+- Animations
+- UI polish
+- Tutorial
+- Mobile
+- Console
+
+PHASE 9 — TESTING
+
+Test:
+
+- RNG
+- Economy
+- Saving
+- Trading
+- Exploits
+- Events
+- Server restarts
+- Player disconnects
+- Mobile
+- Performance
+
+PHASE 10 — RELEASE
+
+- Beta
+- Analytics
+- Balance
+- Bug fixes
+- Launch
+- First live event
+
+---
+
+74. MVP VS FULL 1.0
+
+Do NOT attempt to build all 15 Seas and 28 biomes before testing the core loop.
+
+MVP
+
+- Sea 1–3
+- 15 items
+- 5 equipment tiers
+- Basic inventory
+- Basic RNG
+- Basic Index
+- 5 biomes
+- Selling
+- Upgrades
+
+Goal:
+
+«Prove that discovering an item → upgrading → going deeper is fun.»
+
+1.0
+
+- 15 Seas
+- 50+ items
+- 12+ equipment tiers
+- 28 biome events
+- Variants
+- Secrets
+- Trading
+- Missions
+- Achievements
+- Full Index
+- Mobile/PC/Console
+- Monetization
+- Analytics
+
+---
+
+75. SUCCESS METRICS
+
+Track:
+
+First-session
+
+- Tutorial completion
+- First discovery
+- First upgrade
+- First Sea unlock
+
+Retention
+
+- Day 1
+- Day 3
+- Day 7
+- Day 30
+
+Gameplay
+
+- Discoveries/player
+- Dives/session
+- Session length
+- Sea progression
+- Items sold
+- Items collected
+
+Events
+
+- Players present at event start
+- Event participation
+- Variants discovered
+- Event-exclusive items discovered
+
+Economy
+
+- Currency generated
+- Currency spent
+- Average inventory value
+- Equipment progression
+
+These numbers should guide balancing.
+
+---
+
+76. CORE BALANCE RULE
+
+The player should always have three visible goals:
+
+Immediate
+
+«"I want to find something rare."»
+
+Medium-term
+
+«"I want this upgrade."»
+
+Long-term
+
+«"I want to reach the next Sea."»
+
+The game becomes unhealthy if all progression is reduced to:
+
+«"Grind money."»
+
+---
+
+77. THE MOST IMPORTANT RETENTION MECHANIC
+
+The 30-minute biome cycle creates a natural recurring question:
+
+«"What's happening to the ocean next?"»
+
+The player may log in normally and discover:
+
+«🌊 CRIMSON WATERS»
+
+Then later:
+
+«☄️ GALACTIC STORM»
+
+Then eventually:
+
+«⚠️ SYSTEM ERROR»
+
+This should make Deep Dive feel like a world rather than a static RNG simulator.
+
+---
+
+78. FINAL GAME IDENTITY
+
+Deep Dive should start as:
+
+«A simple ocean discovery game.»
+
+Then gradually reveal itself as:
+
+«An enormous collection/RNG progression game where the ocean itself changes the things you discover.»
+
+The progression should feel like:
+
+TIN CAN
+ ↓
+PEARL
+ ↓
+ANCIENT RELIC
+ ↓
+LEVIATHAN SCALE
+ ↓
+VOID CRYSTAL
+ ↓
+STAR FRAGMENT
+ ↓
+REALITY SHARD
+ ↓
+GLITCHED OBJECT
+ ↓
+???
+
+And variants create another dimension:
+
+Tin Can
+↓
+Crimson Tin Can
+↓
+Golden Tin Can
+↓
+Galactic Tin Can
+↓
+Corrupted Galactic Tin Can
+↓
+???
+
+The ultimate objective is not simply:
+
+«"Reach the deepest Sea."»
+
+It is:
+
+«"Discover things nobody else has discovered."»
+
+---
+
+79. NON-NEGOTIABLE RULES
+
+1. Restoration is removed permanently.
+2. The Sea is the main progression system.
+3. Equipment must scale with Sea progression.
+4. There must be at least 20 temporary biomes at 1.0.
+5. Biomes occur on a 30-minute cycle.
+6. Biomes modify discovered items through prefixes/variants.
+7. The base item and variant must be separate data concepts.
+8. The system must support future multi-prefix variants.
+9. There must be at least 50 base items at 1.0.
+10. F2P players must be able to reach the complete progression.
+11. Premium content is primarily convenience/cosmetic.
+12. RNG is server-authoritative.
+13. Trading is server-authoritative.
+14. Player data is server-authoritative.
+15. The Index tracks base items AND variants.
+16. Rare events must feel substantially different from normal gameplay.
+17. Late-game content should become increasingly surreal.
+18. New content must be addable without rewriting core systems.
+19. No single equipment category should become irrelevant.
+20. The game must remain understandable despite increasing complexity.
+
+---
+
+80. ONE-SENTENCE PITCH
+
+«DEEP DIVE is a Roblox exploration and RNG game where you descend through increasingly impossible oceans, discover rare objects, upgrade your equipment, and hunt temporary biome events that transform ordinary discoveries into extraordinary variants.»
+
+---
+
+81. DEVELOPMENT NORTH STAR
+
+When deciding whether a feature belongs in Deep Dive, ask:
+
+«Does this make discovering, collecting, upgrading, going deeper, or hunting something rare more exciting?»
+
+If yes:
+
+Build it.
+
+If no:
+
+Question why it exists.
+
+Deep Dive should remain focused on one fantasy:
+
+GO DEEPER. FIND SOMETHING IMPOSSIBLE.

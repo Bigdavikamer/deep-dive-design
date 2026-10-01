@@ -1,0 +1,31 @@
+Game concept: Capy Rush
+
+Speed is secondary. The main hook is a "ripen and rush" loop: you raise valuable capybaras on a timer, and every few minutes a server-wide market event pays a huge bonus to anyone who can deliver one in time. I haven't searched Roblox for anything similar, so check for close matches before you commit.
+
+Primary mechanic: ripening and the Market Rush
+Raise: hatch baby capybaras in your pen. They ripen over real time (minutes to hours by rarity), so you earn while away.
+Mutate: each capybara can roll a random mutation on ripening (golden, cosmic, and so on), which changes its value and its look. This is the variable reward that makes people check back.
+Glow: a fully ripe rare capybara glows with a beam visible to the whole server. It's a status flex and a "look what I have" moment.
+Market Rush: every 5–10 minutes a server-wide event spawns a far-off buyer paying 5x for 60 seconds. Everyone with a ripe capybara sprints to deliver it through the market street.
+Cash out and reinvest: payouts buy better eggs, more pen slots, and speed upgrades.
+Where speed comes in (secondary)
+Your speed stat decides how fast you cross the obstacle street, so faster players make the deadline with more capybaras.
+Speed is trained on treadmills in your pen while you wait for ripening, which fills the idle time.
+Obstacles are speed-gated, so a lot of speed pays off at the moment that matters.
+Why it should hook people
+Idle income gives a reason to come back.
+Random mutations give a reason to check in.
+Scheduled server-wide events create a "don't miss it" pull every few minutes and give streamers a moment to build content around.
+Visible glow turns your rare capybara into a status symbol.
+A payoff moment where speed matters gives the grind an active climax, not just waiting.
+Player interaction without stealing
+Everyone rushes together, so the race is the social layer.
+Optional: a slowing mud puddle or a bump that makes rivals drop pace briefly, with no item loss, which keeps new players from being griefed.
+Monetization
+Egg luck boosts, extra pen slots, and auto-collect.
+A speed-boost pass and a "Rush skip" that lets you deliver from anywhere once per event.
+Cosmetic auras and trails for glowing capybaras.
+Risks
+The timers-plus-mutations format is the same shape as Grow a Garden. The Market Rush is what makes this different, so it has to feel great in the first session.
+Event timing matters. If a rush is too rare, players leave, and if it's too frequent, it feels like a chore. Tune this in testing.
+Server-side validation is a must. Ripening timers, mutation rolls, and deliveries all need to be server-authoritative so nobody can duplicate capybaras.

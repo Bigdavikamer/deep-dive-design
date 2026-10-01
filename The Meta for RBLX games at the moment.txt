@@ -1,0 +1,54 @@
+Core loop template
+Run on a treadmill (or hold a key to run) and earn Steps or Energy.
+Spend it on speed upgrades and better treadmills.
+Faster speed means higher income and access to new zones.
+Rebirth to reset with a permanent multiplier.
+Add a steal, defend, or race layer so other players affect you.
+Ideas
+
+1. Treadmill Tycoon: Steal a Runner
+
+You own a base with treadmill slots, and each slot holds a pet or character that runs and produces income.
+Runners are obtained from eggs or a conveyor belt with rarity tiers.
+Other players can sneak in and steal your best runner. You defend with speed-boosted traps or a lockdown timer.
+Hook: an exposed rare runner with a countdown creates tension and stories.
+
+2. Escape the Gym
+
+A tall tower or obstacle course is chased by a rising hazard (lava, a giant angry trainer, a rising wave).
+You run on treadmills between sections to charge a speed meter that powers your sprint and jumps.
+Each run earns coins, which buy permanent speed, a stamina bar, and trails.
+Hook: short 2-3 minute runs, instant retry, and a "so close" feeling on failure.
+
+3. Run to Grow
+
+Every step gives size or "power", and your character visibly gets bigger and faster.
+Bigger characters can smash through walls or pass gates locked behind speed thresholds.
+Zones unlock by speed (Forest → Desert → Space).
+Hook: constant visible progress and gated areas you can see but can't reach yet.
+
+4. Race the Server
+
+Treadmills feed a live leaderboard, and the top runner each round gets a big bonus and a crown.
+Rounds last 5 minutes, and the winner picks a server-wide modifier (low gravity, double coins, etc.).
+Hook: competition plus server-wide events people want to be part of.
+
+5. Treadmill Pet Farm
+
+Hatch pets that run on their own treadmills while you're active and while you're away (offline earnings).
+Merge duplicates into stronger versions.
+Daily login gives a free egg, and a timed "hot" treadmill boosts income.
+Hook: collection plus return-tomorrow mechanics.
+
+6. Sprint Heist
+
+You run through a mansion or vault, and speed pads and treadmills carry you faster to the loot.
+Guards get faster each wave, so you upgrade your speed to keep up.
+Loot is banked at the exit, and dying loses part of it.
+Hook: risk vs. reward on every run.
+What keeps players hooked
+Fast first reward: the first upgrade should come within 30 seconds.
+Visible progress: trails, auras, and bigger characters, so upgrades are noticeable.
+Rebirth or prestige: gives long-term goals.
+Limited-time events: double speed weekends, boss runs, and holiday treadmills.
+Monetization that fits: 2x speed pass, auto-run, extra pet slots, and premium trails. Avoid making the free path feel slow to the point of frustration.
